@@ -3,6 +3,5 @@
 
 for this to work as intended you will need:
 
-GitHub Desktop
-Unity Hub
+GitHub Desktop and Unity Hub
 
