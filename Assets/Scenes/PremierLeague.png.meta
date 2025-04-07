@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PremierLeague_0: -557019549182408209
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

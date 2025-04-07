@@ -1,34 +1,36 @@
 using UnityEngine;
-using TMPro;  // Add this to use TextMeshPro
+using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText; // Use TextMeshProUGUI instead of Text for TextMeshPro
-    public int score = 0;  // Starting score
+    public TextMeshProUGUI leftGoalText;
+    public TextMeshProUGUI rightGoalText;
+
+    private int leftScore = 0;
+    private int rightScore = 0;
 
     void Start()
     {
-        // Ensure the scoreText is assigned properly
-        if (scoreText == null)
-        {
-            Debug.LogError("ScoreText is not assigned in the ScoreManager!");
-            return;
-        }
-
-        UpdateScoreText();  // Update the score display at the start
+        UpdateScoreText();
     }
 
-    public void IncreaseScore(int amount)
+    public void IncreaseLeftScore(int amount)
     {
-        score += amount;
-        UpdateScoreText();  // Update the score on the screen
+        leftScore += amount;
+        UpdateScoreText();
+    }
+
+    public void IncreaseRightScore(int amount)
+    {
+        rightScore += amount;
+        UpdateScoreText();
     }
 
     void UpdateScoreText()
     {
-        if (scoreText != null)
-        {
-            scoreText.text = "Score: " + score.ToString();
-        }
+        if (leftGoalText != null)
+            leftGoalText.text = "Left: " + leftScore.ToString();
+        if (rightGoalText != null)
+            rightGoalText.text = "Right: " + rightScore.ToString();
     }
 }
