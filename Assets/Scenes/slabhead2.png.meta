@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4804c43decf0f5541bc0aeab02fd15c8
+guid: ae7a1d6479c26eb4b88eac837ce79b70
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5225341222356486008
-    second: Mudryk3 2_0
+      213: -349394011343130593
+    second: slabhead2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mudryk3 2_0
+      name: slabhead2_0
       rect:
         serializedVersion: 2
-        x: 237
-        y: 4
-        width: 334
-        height: 796
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8887c33e7dbdb77b0800000000000000
-      internalID: -5225341222356486008
+      spriteID: f107e337ff3b62bf0800000000000000
+      internalID: -349394011343130593
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Mudryk3 2_0: -5225341222356486008
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Mudryk3_0: -7780058682211803062
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

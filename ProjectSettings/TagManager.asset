@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Goal
+  - LeftGoal
+  - RightGoal
   layers:
   - Default
   - TransparentFX

@@ -1,97 +1,73 @@
 using UnityEngine;
+using System.Collections;
 
 public class BallController : MonoBehaviour
 {
-    public float kickForce = 10f; // How hard the ball is kicked
-    private ScoreManager scoreManager;  // Reference to the ScoreManager script
-    private bool isScoring = false;  // Flag to check if score has already increased
-    public AudioClip goalSound;  // Reference to the sound clip to play on scoring
-    private AudioSource audioSource;  // Reference to the AudioSource component
+    public float kickForce = 10f;
+    private ScoreManager scoreManager;
+    private bool isScoring = false;
+    public AudioClip goalSound;
+    private AudioSource audioSource;
+
+    private Vector3 startPosition;
+    private Rigidbody2D rb;
+    public float resetDelay = 1f;   
 
     void Start()
     {
-        // Find the ScoreManager in the scene
         scoreManager = FindObjectOfType<ScoreManager>();
-
-        // Get the AudioSource component
         audioSource = GetComponent<AudioSource>();
+        rb = GetComponent<Rigidbody2D>();
+        startPosition = transform.position;
 
-        // Debug log to check if scoreManager is found
         if (scoreManager == null)
-        {
-            Debug.LogError("ScoreManager not found! Make sure it's in the scene.");
-        }
-
-        // If you don't have an AudioSource, log an error
+            Debug.LogError("ScoreManager not found!");
         if (audioSource == null)
-        {
-            Debug.LogError("AudioSource not found on the ball! Add an AudioSource component to the ball.");
-        }
+            Debug.LogError("No AudioSource on Ball!");
+        if (rb == null)
+            Debug.LogError("No Rigidbody2D on Ball!");
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        // Check if a Player touched the ball
-        if (collision.gameObject.CompareTag("Player"))
+        if (!isScoring && scoreManager != null)
         {
-            Rigidbody2D ballRb = GetComponent<Rigidbody2D>();
-
-            if (ballRb != null)
+            if (other.CompareTag("LeftGoal"))
             {
-                // Calculate direction to push the ball
-                Vector2 kickDirection = (transform.position - collision.transform.position).normalized;
-
-                // Apply force to the ball
-                ballRb.AddForce(kickDirection * kickForce, ForceMode2D.Impulse);
+                Debug.Log("Linkes Tor!");
+                isScoring = true;
+                scoreManager.IncreaseLeftScore(1);
+                if (goalSound != null)
+                    audioSource.PlayOneShot(goalSound);
+                StartCoroutine(ResetBallWithDelay());
             }
-        }
-
-        // Check if the ball collides with an object tagged "Goal"
-        if (collision.gameObject.CompareTag("Goal") && !isScoring)
-        {
-            // Prevent double-scoring
-            isScoring = true;
-
-            // Increase score by 1 when the ball hits the goal
-            if (scoreManager != null)
+            else if (other.CompareTag("RightGoal"))
             {
-                scoreManager.IncreaseScore(1);
+                Debug.Log("Rechtes Tor!");
+                isScoring = true;
+                scoreManager.IncreaseRightScore(1);
+                if (goalSound != null)
+                    audioSource.PlayOneShot(goalSound);
+                StartCoroutine(ResetBallWithDelay());
             }
-            else
-            {
-                Debug.LogError("ScoreManager is not assigned or not found!");
-            }
-
-            // Play the goal sound
-            if (audioSource != null && goalSound != null)
-            {
-                audioSource.PlayOneShot(goalSound);  // Play sound once
-            }
-
-            // Reset ball to its original position
-            ResetBallPosition();
         }
     }
 
-    // Reset the ball's position
-    void ResetBallPosition()
+    void OnTriggerExit2D(Collider2D other)
     {
-        transform.position = new Vector3(0f, 0f, 0f);  // Set to your desired starting position
-
-        // Stop any movement
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        if (rb != null)
+        if (other.CompareTag("LeftGoal") || other.CompareTag("RightGoal"))
         {
-            rb.linearVelocity = Vector2.zero;  // Stop the ball
+            isScoring = false;
         }
-
-        // Reset the scoring flag after a short delay (e.g., 0.5 seconds)
-        Invoke("ResetScoringFlag", 0.5f);
     }
 
-    // Reset the scoring flag to allow scoring again
-    void ResetScoringFlag()
-    {
-        isScoring = false;
-    }
+
+IEnumerator ResetBallWithDelay()
+{
+    yield return new WaitForSeconds(resetDelay);
+    rb.linearVelocity = Vector2.zero;
+    rb.angularVelocity = 0f;
+    transform.position = startPosition;
+}
+
 }
