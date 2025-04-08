@@ -33,4 +33,8 @@ public class ScoreManager : MonoBehaviour
         if (rightGoalText != null)
             rightGoalText.text = "Right: " + rightScore.ToString();
     }
+
+    public int GetLeftScore() { return leftScore; }
+
+    public int GetRightScore() { return rightScore; }
 }
