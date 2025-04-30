@@ -29,9 +29,9 @@ public class ScoreManager : MonoBehaviour
     void UpdateScoreText()
     {
         if (leftGoalText != null)
-            leftGoalText.text = "Left: " + leftScore.ToString();
+            leftGoalText.text = "Player 1: " + leftScore.ToString();
         if (rightGoalText != null)
-            rightGoalText.text = "Right: " + rightScore.ToString();
+            rightGoalText.text = "Player 2: " + rightScore.ToString();
     }
 
     public int GetLeftScore() { return leftScore; }

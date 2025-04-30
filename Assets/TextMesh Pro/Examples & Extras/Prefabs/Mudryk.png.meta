@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 30d0412afb75d4a4bab27c21f9ccbcc3
+guid: 80bd2d5fb1c05b84f8d8ddfd90c080d3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1139896140852031513
-    second: Bergvall_0
+      213: 487868642543773310
+    second: Mudryk_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bergvall_0
+      name: Mudryk_0
       rect:
         serializedVersion: 2
-        x: 215
+        x: 237
         y: 3
-        width: 370
+        width: 334
         height: 797
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 910f25c2089b1df00800000000000000
-      internalID: 1139896140852031513
+      spriteID: e76afdf02f145c600800000000000000
+      internalID: 487868642543773310
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Bergvall_0: 1139896140852031513
+      Mudryk_0: 487868642543773310
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
