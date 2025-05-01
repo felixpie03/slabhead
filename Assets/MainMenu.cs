@@ -1,10 +1,38 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    public void PlayGame()
+    public Toggle musicToggle;
+    public Toggle sfxToggle;
+
+        public void PlayGame()
     {
         SceneManager.LoadScene("Bernabeu");
+    }
+
+    void Start()
+    {
+        bool musicOn = PlayerPrefs.GetInt("MusicOn", 1) == 1;
+        bool sfxOn = PlayerPrefs.GetInt("SFXOn", 1) == 1;
+
+        musicToggle.isOn = musicOn;
+        sfxToggle.isOn = sfxOn;
+
+        ToggleMusic(musicOn);
+        ToggleSFX(sfxOn);
+    }
+
+    public void ToggleMusic(bool isOn)
+    {
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.ToggleMusic(isOn);
+    }
+
+    public void ToggleSFX(bool isOn)
+    {
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.ToggleSFX(isOn);
     }
 }

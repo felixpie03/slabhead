@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using System.Collections;
 
@@ -6,24 +7,28 @@ public class BallController : MonoBehaviour
     public float kickForce = 10f;
     private ScoreManager scoreManager;
     private bool isScoring = false;
-    public AudioClip goalSound;
-    private AudioSource audioSource;
 
-    private Vector3 startPosition;
+    public AudioClip goalSound;
+    public AudioClip goalCheer;
+    public AudioClip antonySound;
+
+    private AudioSource audioSource;
     private Rigidbody2D rb;
-    public float resetDelay = 1f;   
+    private Vector3 startPosition;
+
+    private GameObject lastTouchPlayer;
+
+    public float resetDelay = 1f;
 
     void Start()
     {
-        scoreManager = FindObjectOfType<ScoreManager>();
+        scoreManager = FindFirstObjectByType<ScoreManager>(); // neue empfohlene Methode
         audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         startPosition = transform.position;
 
         if (scoreManager == null)
             Debug.LogError("ScoreManager not found!");
-        if (audioSource == null)
-            Debug.LogError("No AudioSource on Ball!");
         if (rb == null)
             Debug.LogError("No Rigidbody2D on Ball!");
     }
@@ -34,20 +39,16 @@ public class BallController : MonoBehaviour
         {
             if (other.CompareTag("LeftGoal"))
             {
-                Debug.Log("Linkes Tor!");
                 isScoring = true;
                 scoreManager.IncreaseLeftScore(1);
-                if (goalSound != null)
-                    audioSource.PlayOneShot(goalSound);
+                PlayScorerSound();
                 StartCoroutine(ResetBallWithDelay());
             }
             else if (other.CompareTag("RightGoal"))
             {
-                Debug.Log("Rechtes Tor!");
                 isScoring = true;
                 scoreManager.IncreaseRightScore(1);
-                if (goalSound != null)
-                    audioSource.PlayOneShot(goalSound);
+                PlayScorerSound();
                 StartCoroutine(ResetBallWithDelay());
             }
         }
@@ -61,13 +62,37 @@ public class BallController : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            lastTouchPlayer = collision.gameObject;
+        }
+    }
 
-IEnumerator ResetBallWithDelay()
+    void PlayScorerSound()
 {
-    yield return new WaitForSeconds(resetDelay);
-    rb.linearVelocity = Vector2.zero;
-    rb.angularVelocity = 0f;
-    transform.position = startPosition;
+    if (lastTouchPlayer != null && lastTouchPlayer.name.Contains("Antony"))
+    {
+        if (antonySound != null)
+            AudioManager.Instance.PlaySFX(antonySound);
+    }
+    else
+    {
+        if (goalCheer != null)
+            AudioManager.Instance.PlaySFX(goalCheer);
+    }
+
+    if (goalSound != null)
+        AudioManager.Instance.PlaySFX(goalSound);
 }
 
+
+    IEnumerator ResetBallWithDelay()
+    {
+        yield return new WaitForSeconds(resetDelay);
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+        transform.position = startPosition;
+    }
 }

@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using TMPro;
 
@@ -29,12 +30,11 @@ public class ScoreManager : MonoBehaviour
     void UpdateScoreText()
     {
         if (leftGoalText != null)
-            leftGoalText.text = "Player 1: " + leftScore.ToString();
+            leftGoalText.text = "Left: " + leftScore.ToString();
         if (rightGoalText != null)
-            rightGoalText.text = "Player 2: " + rightScore.ToString();
+            rightGoalText.text = "Right: " + rightScore.ToString();
     }
 
-    public int GetLeftScore() { return leftScore; }
-
-    public int GetRightScore() { return rightScore; }
+    public int GetLeftScore() => leftScore;
+    public int GetRightScore() => rightScore;
 }
