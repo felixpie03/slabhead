@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 11ac7a4dd64eecc43ba29a8b59d8b4ff
+guid: bfdcf6296e1c9bb4a864c0467d14f65b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8277975620874496122
-    second: Mudryk2_0
+      213: -7201513816666427502
+    second: MaguireNeu_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mudryk2_0
+      name: MaguireNeu_0
       rect:
         serializedVersion: 2
-        x: 237
+        x: 212
         y: 3
-        width: 334
+        width: 327
         height: 797
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6879e6a0809be1d80800000000000000
-      internalID: -8277975620874496122
+      spriteID: 29fa788c6551f0c90800000000000000
+      internalID: -7201513816666427502
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mudryk2_0: -8277975620874496122
+      MaguireNeu_0: -7201513816666427502
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

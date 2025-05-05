@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerControllerArrow : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float jumpForce = 7f;
