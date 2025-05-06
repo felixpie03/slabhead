@@ -1630,7 +1630,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.71, y: 2}
+  m_AnchoredPosition: {x: -4.71, y: 1.83}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &749800925
@@ -1692,8 +1692,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1730,7 +1730,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 127.18228, w: 0}
+  m_margin: {x: 0, y: 0, z: 135.68892, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1756,10 +1756,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb029050a63039744b7307f70e7a0a82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownText: {fileID: 0}
+  countdownText: {fileID: 749800926}
   scoreManager: {fileID: 0}
-  whistleStart: {fileID: 0}
-  whistleEnd: {fileID: 0}
+  whistleStart: {fileID: 8300000, guid: 085e525f20571ec408f090238422acc6, type: 3}
+  whistleEnd: {fileID: 8300000, guid: 085e525f20571ec408f090238422acc6, type: 3}
 --- !u!1 &756584208
 GameObject:
   m_ObjectHideFlags: 0
