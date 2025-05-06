@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      la liga scoreboard_0: 6084542934066120139
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
