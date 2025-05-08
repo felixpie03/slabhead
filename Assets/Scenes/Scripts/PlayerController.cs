@@ -4,9 +4,12 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float jumpForce = 7f;
+
     private Rigidbody2D rb;
     private bool isGrounded;
     private SpriteRenderer spriteRenderer;
+
+    private float lastDirection = 1f; // 1 = right, -1 = left
 
     void Start()
     {
@@ -17,16 +20,23 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float moveDirection = 0f;
+
         if (Input.GetKey(KeyCode.LeftArrow)) moveDirection = -1f;
         if (Input.GetKey(KeyCode.RightArrow)) moveDirection = 1f;
 
+        // Apply movement
         rb.linearVelocity = new Vector2(moveDirection * moveSpeed, rb.linearVelocity.y);
 
-        // Flip character
-        spriteRenderer.flipX = moveDirection > 0;
+        // Update last direction if input was made
+        if (moveDirection != 0)
+        {
+            lastDirection = moveDirection;
+        }
 
+        // Flip sprite based on last direction
+        spriteRenderer.flipX = lastDirection > 0;
 
-        // Jumping
+        // Jump
         if (isGrounded && Input.GetKeyDown(KeyCode.UpArrow))
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);

@@ -5,7 +5,7 @@ public class CharacterSpawner : MonoBehaviour
     public GameObject[] characterPrefabs;
 
     private Vector3 spawnPointPlayer1 = new Vector3(-2, -1.5f, 0);
-    private Vector3 spawnPointPlayer2 = new Vector3(2, 1.5f, 0);
+    private Vector3 spawnPointPlayer2 = new Vector3(2, -1.5f, 0);
 
     void Start()
     {

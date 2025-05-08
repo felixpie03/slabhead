@@ -2174,12 +2174,12 @@ GameObject:
   - component: {fileID: 872111138}
   - component: {fileID: 872111137}
   - component: {fileID: 872111136}
-  - component: {fileID: 872111141}
   - component: {fileID: 872111140}
+  - component: {fileID: 872111141}
   - component: {fileID: 872111139}
   - component: {fileID: 872111142}
   m_Layer: 0
-  m_Name: PremierLeague_0
+  m_Name: PremBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2195,7 +2195,7 @@ CircleCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6ef84cffc1713c046962fcc475c2e6aa, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2315,10 +2315,10 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 872111135}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6ef84cffc1713c046962fcc475c2e6aa, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2360,7 +2360,7 @@ Rigidbody2D:
   m_LinearDamping: 1.5
   m_AngularDamping: 0.05
   m_GravityScale: 0.5
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6ef84cffc1713c046962fcc475c2e6aa, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
