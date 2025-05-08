@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;  // For UI Image component
 
 public class CharacterSpawner : MonoBehaviour
 {
     public GameObject[] characterPrefabs;
-
-    public TeamUIColorManager teamUIColorManager; // Assign this in Inspector
+    public Image player1BadgeImage;  // UI Image for Player 1's badge
+    public Image player2BadgeImage;  // UI Image for Player 2's badge
+    public Image player1IdentityColorImage;  // UI Image for Player 1's identity color (e.g., color background)
+    public Image player2IdentityColorImage;  // UI Image for Player 2's identity color (e.g., color background)
 
     private Vector3 spawnPointPlayer1 = new Vector3(-2, -1.5f, 0);
     private Vector3 spawnPointPlayer2 = new Vector3(2, -1.5f, 0);
@@ -19,26 +22,42 @@ public class CharacterSpawner : MonoBehaviour
         int player1CharacterIndex = PlayerPrefs.GetInt("Player1Character", 0);
         int player2CharacterIndex = PlayerPrefs.GetInt("Player2Character", 0);
 
+        // Instantiate players
         GameObject player1 = Instantiate(characterPrefabs[player1CharacterIndex], spawnPointPlayer1, Quaternion.identity);
         GameObject player2 = Instantiate(characterPrefabs[player2CharacterIndex], spawnPointPlayer2, Quaternion.identity);
 
-        // Enable correct controller
+        // Set Player 1 controls to WASD
         if (player1.TryGetComponent<PlayerController>(out var pc1)) pc1.enabled = false;
         if (player1.TryGetComponent<PlayerControllerWASD>(out var wasd1)) wasd1.enabled = true;
 
+        // Set Player 2 controls to Arrow keys
         if (player2.TryGetComponent<PlayerControllerWASD>(out var wasd2)) wasd2.enabled = false;
         if (player2.TryGetComponent<PlayerController>(out var pc2)) pc2.enabled = true;
 
-        // Assign UI colors if available
-        if (teamUIColorManager != null)
-        {
-            PlayerIdentity id1 = player1.GetComponent<PlayerIdentity>();
-            PlayerIdentity id2 = player2.GetComponent<PlayerIdentity>();
+        // Get Player Identity components and set UI badges and color backgrounds
+        PlayerIdentity player1Identity = player1.GetComponent<PlayerIdentity>();
+        PlayerIdentity player2Identity = player2.GetComponent<PlayerIdentity>();
 
-            if (id1 != null && id2 != null)
-            {
-                teamUIColorManager.SetPlayerColors(id1.playerColor, id2.playerColor);
-            }
+        // Assign the badge (this is the static image)
+        if (player1Identity != null && player1BadgeImage != null)
+        {
+            player1BadgeImage.sprite = player1Identity.playerBadge;
+        }
+
+        if (player2Identity != null && player2BadgeImage != null)
+        {
+            player2BadgeImage.sprite = player2Identity.playerBadge;
+        }
+
+        // Set the identity color image (e.g., background or color plate)
+        if (player1Identity != null && player1IdentityColorImage != null)
+        {
+            player1IdentityColorImage.color = player1Identity.playerColor;  // Use the player's identity color
+        }
+
+        if (player2Identity != null && player2IdentityColorImage != null)
+        {
+            player2IdentityColorImage.color = player2Identity.playerColor;  // Use the player's identity color
         }
     }
 }

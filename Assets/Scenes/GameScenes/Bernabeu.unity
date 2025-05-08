@@ -119,6 +119,81 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &21439489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 21439490}
+  - component: {fileID: 21439492}
+  - component: {fileID: 21439491}
+  m_Layer: 5
+  m_Name: BadgePlayer1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &21439490
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21439489}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 99393392}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -5.0542, y: 2.7691}
+  m_SizeDelta: {x: 0.6989, y: 0.5666}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &21439491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21439489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &21439492
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21439489}
+  m_CullTransparentMesh: 1
 --- !u!1 &99393388
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,6 +297,8 @@ RectTransform:
   - {fileID: 1421196358}
   - {fileID: 1102708153}
   - {fileID: 147067856}
+  - {fileID: 21439490}
+  - {fileID: 1773875727}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -566,6 +643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerName: Bergvall
   playerColor: {r: 0.91372555, g: 0.93725497, b: 0.93725497, a: 1}
+  playerBadge: {fileID: -1398783624865276513, guid: 7faeaf3dfa7fb7e409835dbee30b0cfd, type: 3}
 --- !u!1 &147067855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1699,7 +1777,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.719, y: 1.877}
+  m_AnchoredPosition: {x: -4.811, y: 1.864}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &749800925
@@ -1734,10 +1812,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CD
+  m_text: 00:30
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1767,7 +1845,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 2
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -2065,6 +2143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerName: Reid
   playerColor: {r: 0.043137256, g: 0.5019608, b: 0.39607847, a: 1}
+  playerBadge: {fileID: 5205285562745389012, guid: 761e8932e714d8944836d51b25334e94, type: 3}
 --- !u!1 &765989661
 GameObject:
   m_ObjectHideFlags: 0
@@ -2224,7 +2303,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterPrefabs:
-  - {fileID: 133895842}
   - {fileID: 1731083319}
   - {fileID: 1680899362}
   - {fileID: 1512995674}
@@ -2232,7 +2310,11 @@ MonoBehaviour:
   - {fileID: 1980757827}
   - {fileID: 2099958854}
   - {fileID: 1152404790}
-  teamUIColorManager: {fileID: 147067857}
+  - {fileID: 1152404790}
+  player1BadgeImage: {fileID: 21439491}
+  player2BadgeImage: {fileID: 1773875728}
+  player1IdentityColorImage: {fileID: 1421196360}
+  player2IdentityColorImage: {fileID: 1102708155}
 --- !u!4 &838440548
 Transform:
   m_ObjectHideFlags: 0
@@ -3167,6 +3249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerName: Simon
   playerColor: {r: 0.93725497, g: 0.9215687, b: 0.20784315, a: 1}
+  playerBadge: {fileID: 4184143139984380121, guid: e5cfa96b83b707749b286782fecfb153, type: 3}
 --- !u!1 &1263556150
 GameObject:
   m_ObjectHideFlags: 0
@@ -3787,6 +3870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerName: Antony
   playerColor: {r: 0.015686275, g: 0.5294118, b: 0.21176472, a: 1}
+  playerBadge: {fileID: 6113161659836957343, guid: 96830af4b2480fd4cafc1f8f7ccd19b1, type: 3}
 --- !u!1 &1635806076
 GameObject:
   m_ObjectHideFlags: 0
@@ -4110,6 +4194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerName: Maguire
   playerColor: {r: 1, g: 0, b: 0, a: 1}
+  playerBadge: {fileID: -3560714075189043390, guid: a060d0e2dc85c984e8a6e00b1afb2a93, type: 3}
 --- !u!1 &1731083319
 GameObject:
   m_ObjectHideFlags: 0
@@ -4369,6 +4454,82 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerName: Mudryk
   playerColor: {r: 0.21176472, g: 0.03137255, b: 0.8078432, a: 1}
+  playerBadge: {fileID: -3457869407137091903, guid: e6e890dba8db918488282d292704686e, type: 3}
+--- !u!1 &1773875726
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1773875727}
+  - component: {fileID: 1773875729}
+  - component: {fileID: 1773875728}
+  m_Layer: 5
+  m_Name: BadgePlayer2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1773875727
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773875726}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 99393392}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -5.0542, y: 2.0941}
+  m_SizeDelta: {x: 0.6989, y: 0.5666}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1773875728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773875726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1773875729
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773875726}
+  m_CullTransparentMesh: 1
 --- !u!1 &1922079527
 GameObject:
   m_ObjectHideFlags: 0
@@ -4739,6 +4900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerName: Felix
   playerColor: {r: 0.9921569, g: 0.427451, b: 0.10588236, a: 1}
+  playerBadge: {fileID: -7572146029369524686, guid: 219a37887ac76c34599e2ccb2f74f464, type: 3}
 --- !u!1 &2019119521
 GameObject:
   m_ObjectHideFlags: 0
@@ -5243,6 +5405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerName: Robin
   playerColor: {r: 0.21176472, g: 0.03137255, b: 0.8078432, a: 1}
+  playerBadge: {fileID: -3457869407137091903, guid: e6e890dba8db918488282d292704686e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
