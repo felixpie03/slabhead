@@ -19,6 +19,7 @@ public class BallController : MonoBehaviour
     private GameObject lastTouchPlayer;
 
     public float resetDelay = 1f;
+    public float maxSpeed = 10f;  // Maximum speed for the ball
 
     void Start()
     {
@@ -31,6 +32,15 @@ public class BallController : MonoBehaviour
             Debug.LogError("ScoreManager not found!");
         if (rb == null)
             Debug.LogError("No Rigidbody2D on Ball!");
+    }
+
+    void FixedUpdate()
+    {
+        // Clamp the velocity to the max speed
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.ClampMagnitude(rb.linearVelocity, maxSpeed);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
