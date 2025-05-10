@@ -86,6 +86,7 @@ public class BallController : MonoBehaviour
     {
         if (antonySound != null)
             AudioManager.Instance.PlaySFX(antonySound);
+            Debug.Log("Antony");
     }
     else
     {

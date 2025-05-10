@@ -425,7 +425,7 @@ GameObject:
   - component: {fileID: 133895850}
   m_Layer: 0
   m_Name: BergvallNew
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1925,7 +1925,7 @@ GameObject:
   - component: {fileID: 756584216}
   m_Layer: 0
   m_Name: ReidNew
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2804,7 +2804,7 @@ GameObject:
   - component: {fileID: 1152404800}
   m_Layer: 0
   m_Name: simon_0
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3425,7 +3425,7 @@ GameObject:
   - component: {fileID: 1512995682}
   m_Layer: 0
   m_Name: AntonyNew
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3749,7 +3749,7 @@ GameObject:
   - component: {fileID: 1680899370}
   m_Layer: 0
   m_Name: MaguireNew
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4455,7 +4455,7 @@ GameObject:
   - component: {fileID: 1980757835}
   m_Layer: 0
   m_Name: Felix_0
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4960,7 +4960,7 @@ GameObject:
   - component: {fileID: 2099958864}
   m_Layer: 0
   m_Name: Robin_0
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
