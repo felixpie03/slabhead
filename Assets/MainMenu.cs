@@ -12,17 +12,23 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Bernabeu");
     }
 
-    void Start()
+void Start()
+{
+    bool musicOn = PlayerPrefs.GetInt("MusicOn", 1) == 1;
+    bool sfxOn = PlayerPrefs.GetInt("SFXOn", 1) == 1;
+
+    if (musicToggle != null)
     {
-        bool musicOn = PlayerPrefs.GetInt("MusicOn", 1) == 1;
-        bool sfxOn = PlayerPrefs.GetInt("SFXOn", 1) == 1;
-
         musicToggle.isOn = musicOn;
-        sfxToggle.isOn = sfxOn;
-
         ToggleMusic(musicOn);
+    }
+
+    if (sfxToggle != null)
+    {
+        sfxToggle.isOn = sfxOn;
         ToggleSFX(sfxOn);
     }
+}
 
     public void ToggleMusic(bool isOn)
     {

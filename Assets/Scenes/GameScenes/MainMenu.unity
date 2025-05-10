@@ -1255,7 +1255,7 @@ MonoBehaviour:
   targetImage: {fileID: 948517714}
   imageOn: {fileID: 21300000, guid: b77d5e08512e4b641a59667cd80b905e, type: 3}
   imageOff: {fileID: 21300000, guid: f8cdd1e79683f36469fdabd62036279a, type: 3}
-  isMusicToggle: 1
+  isMusicToggle: 0
 --- !u!114 &1374171986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1435,6 +1435,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40b93282ef53a846926d078f499f6b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicToggle: {fileID: 0}
+  sfxToggle: {fileID: 0}
 --- !u!4 &1795718965
 Transform:
   m_ObjectHideFlags: 0
