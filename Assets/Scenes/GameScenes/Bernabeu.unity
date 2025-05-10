@@ -2174,13 +2174,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterPrefabs:
+  - {fileID: 133895842}
   - {fileID: 1731083319}
   - {fileID: 1680899362}
   - {fileID: 1512995674}
   - {fileID: 756584208}
   - {fileID: 1980757827}
   - {fileID: 2099958854}
-  - {fileID: 1152404790}
   - {fileID: 1152404790}
   player1BadgeImage: {fileID: 21439491}
   player2BadgeImage: {fileID: 1773875728}
