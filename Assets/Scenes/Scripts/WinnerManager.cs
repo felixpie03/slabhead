@@ -16,31 +16,45 @@ public class WinnerManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+{
+    if (winnerText == null)
     {
-        if (countdown.GetTimerOn())
+        Debug.LogError("winnerText is not assigned!");
+        return;
+    }
+    if (countdown == null)
+    {
+        Debug.LogError("countdown is not assigned!");
+        return;
+    }
+    if (scoreManager == null)
+    {
+        Debug.LogError("scoreManager is not assigned!");
+        return;
+    }
+
+    if (countdown.GetTimerOn())
+    {
+        if (countdown.GetTimeLeft() > 0)
         {
-            if (countdown.GetTimeLeft() > 0)
+            // timer running
+        }
+        else
+        {
+            if (isDraw())
             {
-            }
-            else
-            {
-                if (isDraw())
-            {
-                    Debug.Log("Draw");
-                    ShowDraw();
+                Debug.Log("Draw");
+                ShowDraw();
             }
             else
             {
                 Debug.Log("Time is Up");
                 ShowWinner();
             }
-
-
-            }
-
-
         }
     }
+}
+
     bool isDraw()
     {
         if (scoreManager.GetRightScore() == scoreManager.GetLeftScore())
