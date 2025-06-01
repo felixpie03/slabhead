@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using TMPro;
 
@@ -10,6 +9,9 @@ public class ScoreManager : MonoBehaviour
     private int leftScore = 0;
     private int rightScore = 0;
 
+    public float scoreCooldown = 0.5f; // Cooldown duration in seconds
+    private float lastScoreTime = -999f; // Tracks time of last score
+
     void Start()
     {
         UpdateScoreText();
@@ -17,13 +19,19 @@ public class ScoreManager : MonoBehaviour
 
     public void IncreaseLeftScore(int amount)
     {
+        if (Time.time - lastScoreTime < scoreCooldown) return;
+
         leftScore += amount;
+        lastScoreTime = Time.time;
         UpdateScoreText();
     }
 
     public void IncreaseRightScore(int amount)
     {
+        if (Time.time - lastScoreTime < scoreCooldown) return;
+
         rightScore += amount;
+        lastScoreTime = Time.time;
         UpdateScoreText();
     }
 

@@ -713,6 +713,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stadiumSprites:
   - {fileID: -76982044855044179, guid: e135391e64a8bf842af4d0c41705cfbe, type: 3}
+  - {fileID: 285960073758059798, guid: 01a21350264a3894c9fcd30f8811bbbb, type: 3}
+  - {fileID: -2285999358349264884, guid: e42766836bb7b734db8012d9812c4c89, type: 3}
+  - {fileID: -4619312961712231510, guid: 447a5f7a09efad7438c9d612f250b1e2, type: 3}
   previewStadium: {fileID: 335330660}
 --- !u!4 &679742783
 Transform:
