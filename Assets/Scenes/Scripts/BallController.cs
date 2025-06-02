@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using System.Collections;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class BallController : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class BallController : MonoBehaviour
 
     public float resetDelay = 1f;
     public float maxSpeed = 10f;  // Maximum speed for the ball
+    public GameObject player1;
+    public GameObject player2;
 
     void Start()
     {
@@ -105,5 +108,21 @@ public class BallController : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         rb.angularVelocity = 0f;
         transform.position = startPosition;
+
+        if (player1 != null)
+        {
+            if (player1.TryGetComponent<PlayerController>(out var pc1))
+                pc1.ResetPlayer();
+            else if (player1.TryGetComponent<PlayerControllerWASD>(out var wasd1))
+                wasd1.ResetPlayer();
+        }
+
+        if (player2 != null)
+        {
+            if (player2.TryGetComponent<PlayerController>(out var pc2))
+                pc2.ResetPlayer();
+            else if (player2.TryGetComponent<PlayerControllerWASD>(out var wasd2))
+                wasd2.ResetPlayer();
+        }
     }
 }

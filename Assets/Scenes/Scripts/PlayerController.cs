@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 
     private float lastDirection = 1f;
 
+    private Vector3 startPosition;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -23,6 +25,7 @@ public class PlayerController : MonoBehaviour
 
         normalSpeed = moveSpeed;
         normalJump = jumpForce;
+        startPosition = transform.position;
     }
 
     void Update()
@@ -53,6 +56,23 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = true;
         }
+    }
+
+    public void ResetPlayer()
+    {
+        if (rb == null)
+        {
+            rb = GetComponent<Rigidbody2D>();
+            
+        }
+
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+        transform.position = startPosition;
+    }
+    public void SetStartPosition(Vector3 pos)
+    {
+        startPosition = pos;
     }
 
     public void ActivateSpeedBoost(float duration)

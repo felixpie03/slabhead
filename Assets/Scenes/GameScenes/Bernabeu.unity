@@ -2306,7 +2306,7 @@ GameObject:
   - component: {fileID: 872111139}
   m_Layer: 0
   m_Name: PremBall
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2435,6 +2435,8 @@ MonoBehaviour:
   antonySound: {fileID: 8300000, guid: ca6b27373223dd84589c8fad63f5d7f8, type: 3}
   resetDelay: 0.3
   maxSpeed: 15
+  player1: {fileID: 0}
+  player2: {fileID: 0}
 --- !u!58 &872111140
 CircleCollider2D:
   m_ObjectHideFlags: 0

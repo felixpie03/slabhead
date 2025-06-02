@@ -24,7 +24,9 @@ public class CharacterSpawner : MonoBehaviour
 
         // Instantiate players
         GameObject player1 = Instantiate(characterPrefabs[player1CharacterIndex], spawnPointPlayer1, Quaternion.identity);
+        SetPlayerStartPosition(player1, spawnPointPlayer1);
         GameObject player2 = Instantiate(characterPrefabs[player2CharacterIndex], spawnPointPlayer2, Quaternion.identity);
+        SetPlayerStartPosition(player2, spawnPointPlayer2);
 
         // Set Player 1 controls to WASD
         if (player1.TryGetComponent<PlayerController>(out var pc1)) pc1.enabled = false;
@@ -33,6 +35,13 @@ public class CharacterSpawner : MonoBehaviour
         // Set Player 2 controls to Arrow keys
         if (player2.TryGetComponent<PlayerControllerWASD>(out var wasd2)) wasd2.enabled = false;
         if (player2.TryGetComponent<PlayerController>(out var pc2)) pc2.enabled = true;
+
+        GameObject ball = GameObject.FindWithTag("Ball");
+        if (ball != null && ball.TryGetComponent<BallController>(out var ballController))
+        {
+            ballController.player1 = player1;
+            ballController.player2 = player2;
+        }
 
         // Get Player Identity components and set UI badges and color backgrounds
         PlayerIdentity player1Identity = player1.GetComponent<PlayerIdentity>();
@@ -59,5 +68,14 @@ public class CharacterSpawner : MonoBehaviour
         {
             player2IdentityColorImage.color = player2Identity.playerColor;  // Use the player's identity color
         }
+    }
+
+    void SetPlayerStartPosition(GameObject player, Vector3 position)
+    {
+        var pc = player.GetComponent<PlayerController>();
+        if (pc != null) pc.SetStartPosition(position);
+
+        var pcWASD = player.GetComponent<PlayerControllerWASD>();
+        if (pcWASD != null) pcWASD.SetStartPosition(position);
     }
 }
