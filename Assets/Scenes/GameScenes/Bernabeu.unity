@@ -1841,7 +1841,6 @@ GameObject:
   - component: {fileID: 749800924}
   - component: {fileID: 749800927}
   - component: {fileID: 749800926}
-  - component: {fileID: 749800925}
   - component: {fileID: 749800928}
   m_Layer: 6
   m_Name: Countdown
@@ -1869,18 +1868,6 @@ RectTransform:
   m_AnchoredPosition: {x: -4.811, y: 1.864}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &749800925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 749800923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1726da980bbcf545aa45f0c3dfe587e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &749800926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1993,7 +1980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownText: {fileID: 749800926}
-  scoreManager: {fileID: 0}
+  scoreManager: {fileID: 215137626}
   whistleStart: {fileID: 8300000, guid: 085e525f20571ec408f090238422acc6, type: 3}
   whistleEnd: {fileID: 8300000, guid: 085e525f20571ec408f090238422acc6, type: 3}
 --- !u!1 &756584208
