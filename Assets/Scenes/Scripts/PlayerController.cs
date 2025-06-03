@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
             lastDirection = moveDirection;
         }
 
-        spriteRenderer.flipX = lastDirection < 0;
+        spriteRenderer.flipX = lastDirection > 0;
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
         {
